@@ -1,0 +1,55 @@
+# =========================
+# Node.js & General (Server & Client)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment Variables (Security)
+# =========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.*
+
+# =========================
+# React / Vite (Client)
+# =========================
+# Build outputs
+dist/
+build/
+
+# Testing coverage
+coverage/
+
+# Vite temporary files
+.vite/
+
+# =========================
+# Operating System Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor Settings
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Optional: Server Specific
+# =========================
+# If your server handles file uploads locally
+uploads/
+# If your server creates log files
+logs/
+*.log
