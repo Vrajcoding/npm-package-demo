@@ -7,7 +7,8 @@ const Login = () => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   
-  const GOOGLE_CLIENT_ID = "81256424710-ocuaiu7rqrt0l7nrnpvlbnqcm15vr2a7.apps.googleusercontent.com";
+
+  console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID);
 
   useEffect(() => {
     const checkSession = () => {
@@ -56,7 +57,7 @@ const Login = () => {
           <div style={styles.authWrapper}>
             <p style={styles.subtitle}>Sign in with your Google account</p>
             <GoogleAuthButton
-              clientId={GOOGLE_CLIENT_ID}
+              clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
               onSuccess={handleSuccess}
               onFailure={handleFailure}
               theme="filled_black"

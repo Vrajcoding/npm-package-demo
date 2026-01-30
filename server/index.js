@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require("express");
 const cors = require("cors");
 const { verifyGoogleToken } = require("google-auth-lite");
@@ -6,7 +8,7 @@ const app = express();
 app.use(cors()); 
 app.use(express.json()); 
 
-const GOOGLE_CLIENT_ID = "81256424710-ocuaiu7rqrt0l7nrnpvlbnqcm15vr2a7.apps.googleusercontent.com";
+
 app.get("/",(req,res) => {
     res.send(".hello world");
 })
@@ -19,7 +21,7 @@ app.post("/api/auth/google", async (req, res) => {
   }
 
   try {
-    const result = await verifyGoogleToken(token, GOOGLE_CLIENT_ID);
+    const result = await verifyGoogleToken(token, process.env.GOOGLE_CLIENT_ID);
     if (!result.valid) {
       return res.status(401).json({ error: "Invalid Google Token" });
     }
